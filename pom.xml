@@ -16,11 +16,9 @@
         <exec-maven-plugin>1.6.0</exec-maven-plugin>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <properties>
             <sonar.projectKey>vimaleshn98_sample-project-maven</sonar.projectKey>
             <sonar.organization>vimaleshn98</sonar.organization>
             <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-          </properties>
     </properties>
 
     <dependencies>
