@@ -69,7 +69,17 @@ pipeline{
                 }
             }
                 steps {
-                    echo "========Deploying  ${New_Version}========"
+                   rtUpload (
+                         serverId: 'artifactory-server',
+                     spec: '''{
+                             "files": [
+                                      {
+                                     "pattern": "target/*.jar",
+                                     "target": "art-doc-dev-loc"
+                                    }
+                                ]
+                            }'''
+                        )
                     }
             post{
                 success{
