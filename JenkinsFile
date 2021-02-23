@@ -23,13 +23,13 @@ pipeline{
                 }
             }
         }
-        // stage("build & SonarQube analysis") {
-        //     steps {
-        //       withSonarQubeEnv('sonarqube') {
-        //         sh 'mvn verify sonar:sonar'
-        //       }
-        //     }
-        //   }
+        stage("build & SonarQube analysis") {
+            steps {
+              withSonarQubeEnv('sonarqube') {
+                sh 'mvn verify sonar:sonar'
+              }
+            }
+          }
         stage("Test"){
             steps{
                 echo "Maven Test"
@@ -37,7 +37,6 @@ pipeline{
             }
             post{
                 success{
-                    junit 'target/surefire-reports/**/*.xml'
                     echo "========Maven Test stage executed successfully  ${New_Version}========"
 
                 }
